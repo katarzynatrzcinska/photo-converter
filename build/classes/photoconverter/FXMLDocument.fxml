@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="photoconverter.FXMLDocumentController">
+    <center>
+        <TableView fx:id="filesTable" prefHeight="200.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="imageNameColumn" prefWidth="435.0" text="Name"></TableColumn>
+                <TableColumn fx:id="progressColumn" minWidth="0.0" prefWidth="255.0" text="Progress"></TableColumn>
+                <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="110.0" text="Status"></TableColumn>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox GridPane.rowIndex="2">
+            <children>
+                <Button onAction="#choosePhotos" text="Choose images" />
+                <Button onAction="#chooseOutputDirection" text="Choose directory" />
+                <Button onAction="#processFilesSequentially" text="Sequential processing" />
+                <Button onAction="#processFilesParallellyWithCommonPool" text="Parallel (common pool)" />
+                <Button onAction="#processFilesParallellyWithCustomPool" text="Parallel (custom pool)" />
+                <Label  fx:id="timeLabel" text="" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
